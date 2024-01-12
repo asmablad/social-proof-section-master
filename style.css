@@ -1,0 +1,218 @@
+:root {
+    /* Primary*/
+
+--clr-Dark-purpul: hsl(300, 43%, 22%);
+--clr-Soft-Pink: hsl(333, 80%, 67%);
+
+    /*Neutral*/
+
+--clr-Dark-Gray: hsl(303, 10%, 53%);
+--clr-Light-Gray: hsl(300, 24%, 96%);
+--clr-White: hsl(0, 0%, 100%);
+
+--fs-body: 1rem;
+--fs-title:2.7rem;
+--ff-body: 'League Spartan', sans-serif;
+--fw-regular: 400;
+--fw-medium: 500;
+--fw-semibold: 600;
+--fw-bold: 700;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-family: var(--ff-body);
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  /*display: block;*/
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+}
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+}
+/*-----------------------------------------*/
+/*general styling*/
+body {      
+  background-image: 
+  url(images/bg-pattern-top-mobile.svg),
+  url(images/bg-pattern-bottom-mobile.svg)
+  ;
+  background-repeat: no-repeat;
+  background-position: left top, right -15px bottom -700px;
+  background-size: 50%, 40%;
+  /*50% FOR THE first img and 25% for the 2nd*/
+  /*background-size: contain, contain;*/
+}
+main {
+  padding-block: 3.75rem;
+}
+.intro {
+  margin-bottom: 2.5rem;
+}
+.container {
+width:max(20rem,90%);
+margin-inline: auto;
+text-align: center;
+font-size: var(--fs-body);
+}
+.stars {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.rating {
+  background-color: var(--clr-Light-Gray);
+  border-radius: 0.5rem;
+  padding-block: 1rem;
+}
+
+.title {
+  font-size: var(--fs-title);
+  line-height: 0.8;
+}
+
+.reviews-section{
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+}
+.buyer {
+  background-color: var(--clr-Dark-purpul);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+.buyer img {
+  width: 3rem;
+  border-radius: 50%;
+}
+.flex-groupe {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (min-width:50rem) {
+  body {      
+    background-image: 
+    url(images/bg-pattern-top-desktop.svg),
+    url(images/bg-pattern-bottom-desktop.svg)
+    ;
+    background-repeat: no-repeat;
+    background-position: left top, right bottom -100px;
+    background-size: 25%, 40%;
+    /*50% FOR THE first img and 25% for the 2nd*/
+    /*background-size: contain, contain;*/
+  }
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .heading {
+    max-width: 24rem;
+    text-align: left;
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+    max-width: 25rem;
+    margin-inline: auto;
+  }
+  .rating:first-child {
+    margin-left: 0;
+  }
+  .rating:last-child {
+    margin-right: 0;
+  }
+  .reviews-section {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .buyer:nth-child(2) {
+    transform: translateY(2rem);
+  }
+  .buyer:last-child {
+    transform: translateY(4rem);
+  }
+}
+
+
+/*footer styling*/
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+/*Utility classes*/
+.bold-font {
+  font-weight: var(--fw-bold);
+}
+.top-marging {
+  margin-top: 1rem;
+}
+.gray-txt {
+  color: var(--clr-Dark-Gray);
+  font-weight: var(--fw-semibold);
+}
+.purple-txt {
+  color: var(--clr-Dark-purpul);
+}
+.white-txt {
+  color: var(--clr-White);
+}
+.pink-txt{
+  color: var(--clr-Soft-Pink);
+  opacity: 0.8;
+}
